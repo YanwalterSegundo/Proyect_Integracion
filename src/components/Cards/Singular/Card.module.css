@@ -1,0 +1,45 @@
+.cardContainer {
+    background-image: url("https://cdn.dribbble.com/users/3456021/screenshots/12096013/media/5c34852703790e5221278f96215d2d3e.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgb(255, 255, 255);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+.cardContainer:hover {
+    transform: translateY(-5px);
+}
+  
+.closeButton {
+    align-self: flex-end;
+    background-color: #475047;
+    border: none;
+    color: #f61010;
+    font-size: 22px;
+    cursor: pointer;
+}
+  
+  
+.cardInfo {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: azure;
+    
+}
+  
+.cardImage {
+    margin-top: 10px;
+    border-radius: 5px;
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+}

@@ -1,0 +1,41 @@
+/* esta es la barra de navegacion nde la pagina*/
+.container{
+    
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+      
+}
+
+.active{
+    color: yellow;
+}
+
+.logo{
+    width: 200px; /* Ajusta el ancho deseado para el logo */
+    height: auto; /* La altura se ajusta automáticamente en función del ancho */
+    margin-right: 109px; /* Agrega un margen derecho para separar el logo de los enlaces */
+}
+
+.linkWelcome {
+    font-size: 30px; /* Tamaño de fuente para el enlace WELCOME */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Tipo de fuente */
+  }
+  
+  .linkAbout {
+    font-size: 30px; /* Tamaño de fuente para el enlace ABOUT */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Tipo de fuente */
+    
+  }
+  
+  .linkHome {
+    font-size: 30px; /* Tamaño de fuente para el enlace HOME */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Tipo de fuente */
+  }
+
+
+
+  
