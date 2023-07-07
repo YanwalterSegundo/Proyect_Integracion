@@ -37,9 +37,9 @@
 }
   
 .cardImage {
-    margin-top: 10px;
-    border-radius: 5px;
-    object-fit: cover;
-    width: 250px;
-    height: 250px;
+        margin-top: 10px;
+        border-radius: 5px;
+        object-fit: cover;
+        width: 250px;
+        height: 250px;
 }
