@@ -1,37 +1,23 @@
-const http = require("http")
-require("dotenv").config();
-const {PORT, PASSWORD} = process.env;
+require("dotenv").config(); // Agrega al objeto "process" en la prop "env" nuestras variables
+const { PORT, DB_USER } = process.env;
+const { connectionTuki } = require("./DB_connection");
 
-http
-.createServer(( req,res )=>{
-    res.setHeader("Access-Control-Allow-Origin","");
-// "/rickandmorty/character"
+const server = require("./app");
 
-//if(req.url)
-    if (req.url.includes("/rickandmorty/character")){
-        //quedarme con el id
-        const id = req.url.split("/").at(-1);
+// Servidor ---> Base de datos
+// server.listen(PORT, async () => {
+//   await connectionTuki.sync({ force: true }); // EN CADA SYNC ELIMINA LAS TABLAS Y SUS REGISTROS Y LAS VUELVE A CREAR
+//   // connectionTuki.sync({ alter: true }); // EN CADA SYNC ALTERA LAS TABLAS Y HACE SUS CAMBIOS (si por ej, agregamos un atributo)
+//   console.log("DB SYNC");
+//   console.log("Server raised in port: " + PORT);
+// });
 
-        const character = data.find((element) => element.id === Number(id));
-
-        if(character){
-            res
-            .writeHead(200,{"Content-type" : "application/json"})
-            .end(JSON.stringify({msg: "OK", data: character}));
-
-        } else{
-            res
-            .writeHead(404,{"Content-type": "application/json"})
-            .end(JSON.stringify({
-                msg: "Not Found", 
-                data: "The character with the id ${id} was not found",
-            }));
-
-        }
-    }
-})
-.listen(PORT,()=>{
-    //Hacer algo con la base de datos, ñevantarla,cargarla,etc
-
-});
-  
+// Base de datos ---> Servidor
+connectionTuki
+  .sync({ alter: true })
+  .then((value) => {
+    server.listen(PORT, () => {
+      console.log("Server & DDBB Running ✅");
+    });
+  })
+  .catch((err) => console.error(err));
